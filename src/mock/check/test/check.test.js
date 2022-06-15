@@ -12,10 +12,10 @@ describe("Check", () => {
   it("should call onSuccess when predicate is true", () => {
     check(() => true, onSuccess, onFail);
 
-    // expect(onSuccess.mock.calls.length).toBe(1); //onSuccess라는 mock 함수 오브젝트에 있는 mock이라는 데이터가 호출된 횟수가 1이어야 함
+    // expect(onSuccess.mock.calls.length).toBe(1); // mock 함수 1번 호출
     expect(onSuccess).toHaveBeenCalledTimes(1);
-    // expect(onSuccess.mock.calls[0][0]).toBe("yes"); //calls에 첫번째로 호출된 함수의 첫번째 인자는 'yes'여야 함
-    expect(onSuccess).toHaveBeenCalledWith("yes"); // 해당 인자와 함께 mock 함수가 호출되어져야 함
+    // expect(onSuccess.mock.calls[0][0]).toBe("yes"); // mock 함수 첫번째 호출의 첫번째 인수가 'yes'
+    expect(onSuccess).toHaveBeenCalledWith("yes");
     // expect(onFail.mock.calls.length).toBe(0);
     expect(onFail).toHaveBeenCalledTimes(0);
   });
